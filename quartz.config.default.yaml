@@ -1,13 +1,13 @@
 # yaml-language-server: $schema=./quartz/plugins/quartz-plugins.schema.json
 configuration:
-  pageTitle: Quartz 5
-  pageTitleSuffix: ""
+  pageTitle: "Thế Giới Nệm"
+  pageTitleSuffix: " — Market Intelligence"
   enableSPA: true
   enablePopovers: true
   analytics:
-    provider: plausible
-  locale: en-US
-  baseUrl: quartz.jzhao.xyz
+    provider: null
+  locale: vi-VN
+  baseUrl: thegioinem.goccuaduong.com
   ignorePatterns:
     - private
     - templates
@@ -203,8 +203,8 @@ plugins:
     enabled: true
     options:
       links:
-        GitHub: https://github.com/jackyzha0/quartz
-        Discord Community: https://discord.gg/cRFFHYye7t
+        "🛏️ Thế Giới Nệm": https://thegioinem.goccuaduong.com
+        "Powered by Quartz": https://quartz.jzhao.xyz
     layout:
       position: footer
       priority: 50
