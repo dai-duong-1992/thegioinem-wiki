@@ -57,10 +57,11 @@ function formatFontSpecification(
     spec = { name: spec }
   }
 
-  const defaultIncludeWeights = type === "header" ? [400, 700] : [400, 600]
+  const defaultIncludeWeights = type === "header" || type === "title" ? [400, 600, 700, 800] : [400, 600]
   const defaultIncludeItalic = type === "body"
   const weights = spec.weights ?? defaultIncludeWeights
   const italic = spec.includeItalic ?? defaultIncludeItalic
+  const fontName = spec.name.replaceAll(" ", "+")
 
   const features: string[] = []
   if (italic) {
@@ -79,10 +80,10 @@ function formatFontSpecification(
   }
 
   if (features.length > 0) {
-    return `${spec.name}:${features.join(",")}`
+    return `${fontName}:${features.join(",")}`
   }
 
-  return spec.name
+  return fontName
 }
 
 export function googleFontHref(theme: Theme) {

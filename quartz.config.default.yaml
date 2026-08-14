@@ -16,9 +16,16 @@ configuration:
     fontOrigin: googleFonts
     cdnCaching: true
     typography:
-      header: Be Vietnam Pro
-      body: Inter
-      code: JetBrains Mono
+      header:
+        name: Be Vietnam Pro
+        weights: [400, 500, 600, 700, 800, 900]
+      body:
+        name: Inter
+        weights: [400, 500, 600, 700]
+        includeItalic: true
+      code:
+        name: JetBrains Mono
+        weights: [400, 600, 700]
     colors:
       lightMode:
         light: "#faf8f8"
