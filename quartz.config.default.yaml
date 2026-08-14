@@ -16,7 +16,7 @@ configuration:
     fontOrigin: googleFonts
     cdnCaching: true
     typography:
-      header: Plus Jakarta Sans
+      header: Be Vietnam Pro
       body: Inter
       code: JetBrains Mono
     colors:
