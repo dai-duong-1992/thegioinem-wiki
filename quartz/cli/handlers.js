@@ -440,6 +440,23 @@ export async function handleBuild(argv) {
     // ^ this import is relative, so base "cacheFile" path can't be used
 
     cleanupBuild = await buildQuartz(argv, buildMutex, clientRefresh)
+
+    const outDir = argv.output ?? "public"
+    const xmlFile = path.join(outDir, "index.xml")
+    if (fs.existsSync(xmlFile)) {
+      const xmlContent = fs.readFileSync(xmlFile, "utf-8")
+      if (xmlContent.includes("Quartz -- quartz.jzhao.xyz")) {
+        fs.writeFileSync(
+          xmlFile,
+          xmlContent.replace(
+            /<generator>Quartz -- quartz\.jzhao\.xyz<\/generator>/g,
+            "<generator>Thế Giới Nệm -- thegioinem.goccuaduong.com</generator>",
+          ),
+          "utf-8",
+        )
+      }
+    }
+
     clientRefresh()
   }
 

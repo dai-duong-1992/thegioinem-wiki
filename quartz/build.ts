@@ -349,6 +349,21 @@ async function rebuild(changes: ChangeEvent[], clientRefresh: () => void, buildD
       }
     }
 
+    const xmlFile = path.join(argv.output, "index.xml")
+    if (fs.existsSync(xmlFile)) {
+      const xmlContent = fs.readFileSync(xmlFile, "utf-8")
+      if (xmlContent.includes("Quartz -- quartz.jzhao.xyz")) {
+        fs.writeFileSync(
+          xmlFile,
+          xmlContent.replace(
+            /<generator>Quartz -- quartz\.jzhao\.xyz<\/generator>/g,
+            "<generator>Thế Giới Nệm -- thegioinem.goccuaduong.com</generator>",
+          ),
+          "utf-8",
+        )
+      }
+    }
+
     console.log(
       `Emitted ${emittedFiles} files to \`${argv.output}\` in ${perf.timeSince("rebuild")}`,
     )

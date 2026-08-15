@@ -211,7 +211,8 @@ plugins:
     options:
       links:
         "🛏️ Thế Giới Nệm": https://thegioinem.goccuaduong.com
-        "Powered by Quartz": https://quartz.jzhao.xyz
+        "📊 Báo cáo PMA": https://thegioinem.goccuaduong.com/Nem/PMA-Price-Monitoring/
+        "📣 Báo cáo ASA": https://thegioinem.goccuaduong.com/Nem/ASA-Ads-Scraper/
     layout:
       position: footer
       priority: 50

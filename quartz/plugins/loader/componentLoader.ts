@@ -10,6 +10,16 @@ export async function loadComponentsFromPackage(
   if (!manifest?.components) return
 
   try {
+    if (pluginName === "@quartz-community/footer") {
+      const CustomFooterModule = await import("../../components/CustomFooter")
+      const CustomFooter = CustomFooterModule.default
+      componentRegistry.register("@quartz-community/footer/Footer", CustomFooter, pluginName)
+      componentRegistry.register("@quartz-community/footer", CustomFooter, pluginName)
+      componentRegistry.register("Footer", CustomFooter, pluginName)
+      componentRegistry.register("footer", CustomFooter, pluginName)
+      return
+    }
+
     const componentsPath = getPluginSubpathEntry(pluginName, "./components")
 
     let componentsModule: Record<string, unknown>
